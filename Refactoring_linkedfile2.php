@@ -7,8 +7,8 @@
 	protected $plumber;
 	public function __construct($electrician,$plumber,$designer)
 	{
-      $this->electrician = $electrician;
-      $this->plumber = $plumber;
+          $this->electrician = $electrician;
+          $this->plumber = $plumber;
 	}
 
 	public function performWork()
@@ -24,17 +24,16 @@ class QueryBuilder
 
 	public function __construct($pdo)
 	{
-		$this->pdo = $pdo;
+            $this->pdo = $pdo;
 	}
 	public function selectAll($table)
 	{
 	    $statement = $this->pdo->prepare('select * from todos');
 
-        $statement->execute();
+            $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS);
-
-	}
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        }
 }
 
 ?>

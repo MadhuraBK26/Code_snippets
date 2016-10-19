@@ -5,9 +5,9 @@ function connectToDb()
 {
   try {
 
-         return new PDO('mysql:host=127.0.0.1;dbname=mytodo','root','compass');
+        return new PDO('mysql:host=127.0.0.1;dbname=mytodo','root','compass');
 
-  } catch (PDOException $e) {
+   } catch (PDOException $e) {
 
 	die($e->getMessage());
   }
@@ -15,7 +15,7 @@ function connectToDb()
 
 function fetchAllTasks($pdo)
 {
-	$statement = $pdo->prepare('select * from todos');
+    $statement = $pdo->prepare('select * from todos');
 
     $statement->execute();
 
@@ -26,9 +26,9 @@ function fetchAllTasks($pdo)
 
 function dd($data) 
 {
-	echo '<pre>';
+    echo '<pre>';
 
-	die(var_dump($data));
+    die(var_dump($data));
 
-	echo '</pre>';
+    echo '</pre>';
 }
